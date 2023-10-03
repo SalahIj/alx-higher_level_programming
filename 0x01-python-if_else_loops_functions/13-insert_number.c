@@ -22,16 +22,13 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		Last->next = Nope;
 		*head = Last;
-		return (*head = Last);
+		return (*head);
 	}
-	for (; Nope != NULL; Nope = Nope->next)
-	{
-		if (Nope->next == NULL || Last->n < Nope->next->n)
-		{
-			Last->next = Nope->next;
-			Nope->next = Last;
-			return (Nope);
-		}
-	}
-	return (NULL);
+	for (; Nope->next != NULL && Last->n >= Nope->next->n; Nope = Nope->next)
+	;
+
+	Last->next = Nope->next;
+	Nope->next = Last;
+
+	return (Last);
 }
