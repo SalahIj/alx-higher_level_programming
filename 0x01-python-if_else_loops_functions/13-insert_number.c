@@ -7,6 +7,7 @@
  * @number: the second input.
  * Return: the result
  */
+
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *Nope = *head, *Last;
@@ -21,11 +22,11 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		Last->next = Nope;
 		*head = Last;
-		return (*head);
+		return (*head = Last);
 	}
 	for (; Nope != NULL; Nope = Nope->next)
 	{
-		if (Nope == NULL || Last->n < Nope->next->n)
+		if (Nope->next == NULL || Last->n < Nope->next->n)
 		{
 			Last->next = Nope->next;
 			Nope->next = Last;
