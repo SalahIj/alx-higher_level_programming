@@ -10,4 +10,4 @@ if (__name__ == "__main__"):
         sum = 0
         for i in range(1, lenght):
             sum += int(sys.argv[i])
-            print("{:d}".format(sum))
+        print("{:d}".format(sum))
