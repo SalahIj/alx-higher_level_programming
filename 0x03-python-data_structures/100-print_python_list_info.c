@@ -7,7 +7,7 @@
 
 void print_python_list_info(PyObject *p)
 {
-	int s, allocation,  = 0;
+	int s, allocation, j = 0;
 	Pyobject *ject;
 
 	allocation = ((PylistObject *)p)->allocated;
