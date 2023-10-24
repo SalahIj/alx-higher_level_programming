@@ -3,10 +3,12 @@
 
 
 class Square:
-    """Constractor.
+    """ Square class """
 
-    Args:
-    size: the first input
-    """
     def __init__(self, size):
+        """Constractor.
+
+        Args:
+            size: the first input
+        """
         self._size = size
