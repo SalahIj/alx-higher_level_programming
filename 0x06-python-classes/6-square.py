@@ -12,8 +12,8 @@ class Square:
             size: the first input
             position: the second input
         """
-        self._size = size
-        self._position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
