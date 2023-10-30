@@ -15,7 +15,7 @@ class Rectangle:
     @property
     def width(self):
         """ Definition of getter function for width """
-        return (self.__width)
+        return (self._width)
 
     @width.setter
     def width(self, value):
@@ -24,12 +24,12 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if (value < 0):
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self._width = value
 
     @property
     def height(self):
         """ property function for height """
-        return (self.__height)
+        return (self._height)
 
     @height.setter
     def height(self, value):
@@ -38,18 +38,18 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if (value < 0):
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self._height = value
 
     def area(self):
         """ Definition of area function """
-        return (self.__height * self.__width)
+        return (self.height * self.width)
 
     def perimeter(self):
         """ Definition of perimeter function """
-        if (self.__height == 0 or self.__width == 0):
+        if (self.height == 0 or self.width == 0):
             return (0)
         else:
-            return (2 * (self.__height + self.__width))
+            return (2 * (self.height + self.width))
 
     @classmethod
     def square(cls, size=0):
@@ -59,17 +59,17 @@ class Rectangle:
     def __str__(self):
         """ Definition of str function """
         stri = ""
-        if (self.__width == 0 or self.__height == 0):
+        if (self.width == 0 or self.height == 0):
             return (stri)
-        for i in range(self.__height):
-            stri += "".join(str(self.print_symbol) * self.__width)
-            if (i != self.__height - 1):
+        for i in range(self.height):
+            stri += "".join(str(self.print_symbol) * self.width)
+            if (i != self.height - 1):
                 stri += "\n"
         return (stri)
 
     def __repr__(self):
         """ Representation function """
-        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+        return ("Rectangle({:d}, {:d})".format(self.width, self.height))
 
     def __del__(self):
         """ Deleting function for deleting an instance """
