@@ -10,7 +10,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -75,7 +75,7 @@ class Rectangle:
     def __del__(self):
         """ Deleting function for deleting an instance """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
