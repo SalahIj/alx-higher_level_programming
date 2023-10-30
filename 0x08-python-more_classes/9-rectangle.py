@@ -58,15 +58,14 @@ class Rectangle:
 
     def __str__(self):
         """ Definition of str function """
-        rectangle = []
-        if self._width == 0 or self._height == 0:
-            return ""
+        stri = ""
+        if (self._width == 0 or self._height == 0):
+            return (stri)
         for i in range(self._height):
-            for j in range(self._width):
-                rectangle.append(str(self.print_symbol))
-            rectangle.append("\n")
-        rectangle.pop()
-        return "".join(rectangle)
+            stri += "".join(str(self.print_symbol) * self._width)
+            if (i != self._height - 1):
+                stri += "\n"
+        return (stri)
 
     def __repr__(self):
         """ Representation function """
