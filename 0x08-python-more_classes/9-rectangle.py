@@ -51,6 +51,11 @@ class Rectangle:
         else:
             return (2 * (self._height + self._width))
 
+    @classmethod
+    def square(cls, size=0):
+        """ Definition of function """
+        return (Rectangle(size, size))
+
     def __str__(self):
         """ Definition of str function """
         stri = ""
@@ -83,8 +88,3 @@ class Rectangle:
             return (rect_1)
         else:
             return (rect_2)
-
-    @classmethod
-    def square(cls, size=0):
-        """ Definition of function """
-        return (Rectangle(size, size))
