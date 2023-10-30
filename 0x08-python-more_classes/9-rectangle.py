@@ -61,7 +61,7 @@ class Rectangle:
                 stri += "".join(str(self.print_symbol) * self._width)
                 if (i != self._height - 1):
                     stri += "\n"
-                return (stri)
+            return (stri)
 
     def __repr__(self):
         """ Representation function """
