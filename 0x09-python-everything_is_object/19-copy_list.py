@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-def copy_list(l):
-    lis = []
-    for i in range(len(l)):
-        lis.append(l[i])
-    return (lis)
+def copy_list(my_list):
+    List = my_list.copy()
+    return (List)
