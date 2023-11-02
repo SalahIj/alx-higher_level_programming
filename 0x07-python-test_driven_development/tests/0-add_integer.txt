@@ -30,16 +30,6 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add_integer(float('inf'), 0)
-Traceback (most recent call last):
-...
-NameError: name 'add_integer' is not defined
-
->>> add_integer(0, float('nan'))
-Traceback (most recent call last):
-...
-NameError: name 'add_integer' is not defined
-
 >>> add('c', 5)
 Traceback (most recent call last):
 TypeError: a must be an integer
