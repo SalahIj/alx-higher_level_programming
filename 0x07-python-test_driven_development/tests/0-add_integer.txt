@@ -1,22 +1,28 @@
 >>> add = __import__('0-add_integer').add_integer
 
->>> add(2, 4)
-6
+>>> add(1, 2)
+3
 
 >>> add(1, -2)
 -1
 
->>> add(-9, 7)
--2
+>>> add(1.4, 2)
+3
 
->>> add(0, 0)
-0
+>>> add(float('inf'), 0)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
 
->>> add(5.2, 3.12)
-8
+>>> add(1, "2")
+Traceback (most recent call last):
+TypeError: b must be an integer
 
->>> add(0)
-98
+>>> add(0, float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add(2)
+100
 
 >>> add()
 Traceback (most recent call last):
