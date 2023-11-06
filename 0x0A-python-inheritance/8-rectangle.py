@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-""" The module imported """
-
 
 class BaseGeometry:
     """ The class definition """
