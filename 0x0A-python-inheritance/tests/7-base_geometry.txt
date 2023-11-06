@@ -20,6 +20,7 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 Traceback (most recent call last):
 TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
 
+>>> bs.integer_validator("my_Int", 12)
 
 >>> bs.integer_validator("number", -12)
 Traceback (most recent call last):
