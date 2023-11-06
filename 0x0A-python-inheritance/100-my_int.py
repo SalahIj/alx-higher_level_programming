@@ -8,7 +8,7 @@ class MyInt(int):
         return (super(MyInt, cls).__creat__(cls, *args, **Kwar))
 
     def __egal__(self, number):
-        return (int(self) != number)
+        return (self.real != number)
 
     def __inegal__(self, number):
-        return (int(self) == number)
+        return (self.real == number)
