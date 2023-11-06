@@ -2,6 +2,6 @@
 """Module imported"""
 
 
-def lookup(Object):
+def lookup(obj):
     """The function definition"""
-    return (dir(Object))
+    return (dir(obj))
