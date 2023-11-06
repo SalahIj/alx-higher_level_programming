@@ -1,16 +1,7 @@
 #!/usr/bn/python3
-"""
-Module imported
-"""
+"""Module imported"""
 
 
 def lookup(Object):
-    """The function definition
-
-    Args:
-        Object: th first input
-
-    Return:
-        the result
-    """
+    """The function definition"""
     return (dir(Object))
