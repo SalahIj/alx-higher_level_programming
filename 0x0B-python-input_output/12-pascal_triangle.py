@@ -9,7 +9,7 @@ def pascal_triangle(n):
     Return:
         The result
     """
-    Listi = []
+    List = []
     if (n <= 0):
         return (List)
     debut = [[1]]
