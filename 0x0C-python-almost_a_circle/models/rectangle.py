@@ -99,7 +99,11 @@ class Rectangle(Base):
         return (string)
 
     def update(self, *args, **kwargs):
-        """ Update method """
+        """ Update method:
+        Args:
+            args: the first input
+            kwargs: the second input
+        """
         list_args = ['id', 'width', 'height', 'x', 'y']
         lenght = len(args)
         if (args is not None and lenght != 0):
@@ -108,3 +112,12 @@ class Rectangle(Base):
         else:
             for cle, valeur in kwargs.items():
                 setattr(self, cle, valeur)
+
+    def to_dictionary(self):
+        """ Dict method:
+        Return:
+            the result
+        """
+        Dictio = {'id': self.id, 'width': self.__width,
+                  'height': self.__height, 'x': self.__x, 'y': self.__y}
+        return (Dictio)
