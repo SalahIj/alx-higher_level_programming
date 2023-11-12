@@ -63,3 +63,15 @@ class Base:
         List = cls.to_json_string(list_dictionary)
         with open(filename, 'w', encoding='utf-8') as File:
             File.write(List)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ method """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if (cls is Square):
+            dummey = Square(1)
+        if (cls is Rectangle):
+            dummy = Rectangle(1, 1)
+        dummy.update(**dictionary)
+        return (dummy)
