@@ -83,12 +83,11 @@ class Rectangle(Base):
 
     def display(self):
         """ Display rectangle method """
-        for i in range(self.height):
-            for j in range(self.width):
-                if (j == self.width - 1):
-                    print("#")
-                else:
-                    print("#", end='')
+        str_1 = self.y * '\n'
+        str_2 = (" " * self.x)
+        str_3 = ("#" * self.width + "\n")
+        str_4 = (str_2 + str_3) * self.height
+        print(str_1 + str_4, end='')
 
     def __str__(self):
         """ overriding method """
