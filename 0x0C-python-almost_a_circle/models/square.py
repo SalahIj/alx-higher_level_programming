@@ -51,3 +51,11 @@ class Square(Rectangle):
         else:
             for r in range(lenght):
                 setattr(self, args_list[r], args[r])
+
+    def to_dictionary(self):
+        """ Dict method:
+        Return:
+            the result
+        """
+        dic = {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
+        return (dic)
