@@ -1,5 +1,6 @@
 import json
 import os
+import csv
 """ imported module """
 
 
@@ -88,3 +89,41 @@ class Base:
             data = File.read()
         List_in = [cls.create(**i) for i in cls.from_json_string(data)]
         return (List_in)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Save in csv file method """
+        filename = "{}.csv".format(cls.__name__)
+        objects_list = []
+        if (not list_objs):
+            pass
+        else:
+            if (cls.__name__ == "Rectangle"):
+                for o in list_objs:
+                    objects_list.append([o.id, o.width, o.height, o.x, o.y])
+            elif (cls.__name__ == "Square"):
+                for o in list_objs:
+                    objects_list.append([o.id, o.size, o.x, o.y])
+        with open(filename, 'w', encoding='utf-8', newline='') as File:
+            data = csv.writer(File)
+            data.writerows(objects_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Load from csv file method """
+        filename = "{}.csv".format(cls.__name__)
+        tab = []
+        if (os.path.exists(filename) is False):
+            return ([])
+        with open(filename, 'r', encoding='utf-8', newline='') as File:
+            data = csv.reader(File)
+            for i in data:
+                for index, r in enumerate(i):
+                    i[index] = int(r)
+                if (cls.__name__ == "Square"):
+                    d = {"id": i[0], "size": i[1], "x": i[2], "y": i[3]}
+                elif (cls.__name__ == "Rectangle"):
+                    d = {"id": i[0], "width": i[1], "height": i[2],
+                         "x": i[3], "y": i[4]}
+                tab.append(cls.create(**d))
+        return (tab)
