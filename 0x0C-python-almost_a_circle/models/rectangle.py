@@ -98,10 +98,13 @@ class Rectangle(Base):
         string += " {}/{}".format(self.__width, self.__height)
         return (string)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update method """
         list_args = ['id', 'width', 'height', 'x', 'y']
         lenght = len(args)
         if (args is not None and lenght != 0):
             for r in range(lenght):
                 setattr(self, list_args[r], args[r])
+        else:
+            for cle, valeur in kwargs.items():
+                setattr(self, cle, valeur)
