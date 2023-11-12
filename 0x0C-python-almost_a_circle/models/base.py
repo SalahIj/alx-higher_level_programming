@@ -1,4 +1,5 @@
 import json
+import os
 """ imported module """
 
 
@@ -69,9 +70,21 @@ class Base:
         """ method """
         from models.rectangle import Rectangle
         from models.square import Square
-        if (cls is Square):
-            dummey = Square(1)
         if (cls is Rectangle):
             dummy = Rectangle(1, 1)
+        if (cls is Square):
+            dummy = Square(1)
         dummy.update(**dictionary)
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """ load method """
+        filename = "{}.json".format(cls.__name__)
+        list_in = []
+        if (os.path.exists(filename) is False):
+            return ([])
+        with open(filename, 'r', encoding="utf-8") as File:
+            data = File.read()
+        List_in = [cls.create(**i) for i in cls.from_json_string(data)]
+        return (List_in)
