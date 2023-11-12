@@ -19,13 +19,13 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    """ Getter """
     def width(self):
+        """ getter """
         return (self.__width)
 
     @width.setter
-    """ Setter """
     def width(self, value):
+        """ setter """
         if (not isinstance(value, int)):
             raise TypeError("width must be an integer")
         if (value <= 0):
@@ -33,13 +33,13 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    """ getter """
     def height(self):
+        """ getter """
         return (self.__height)
 
     @height.setter
-    """ setter """
     def height(self, value):
+        """ setter """
         if (type(value) is not int):
             raise TypeError("height must be an integer")
         if (value <= 0):
@@ -47,13 +47,13 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """ getter """
     def x(self):
+        """ getter """
         return (self.__x)
 
     @x.setter
-    """ setter """
     def x(self, value):
+        """ setter """
         if (type(value) is not int):
             raise TypeError("y must be an integer")
         if (value < 0):
@@ -61,15 +61,22 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    """ getter """
     def y(self):
+        """ getter """
         return (self.__y)
 
     @y.setter
-    """ setter """
     def y(self, value):
+        """ setter """
         if (type(value) is not int):
             raise TypeError("y must be an integer")
         if (value < 0):
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """ Area method:
+        Return:
+            the result
+        """
+        return (self.__width * self.__height)
