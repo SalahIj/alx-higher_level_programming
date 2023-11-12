@@ -80,3 +80,12 @@ class Rectangle(Base):
             the result
         """
         return (self.__width * self.__height)
+
+    def display(self):
+        """ display rectangle method """
+        for i in range(self.height):
+            for j in range(self.width):
+                if (j == self.width - 1):
+                    print("#")
+                else:
+                    print("#", end='')
