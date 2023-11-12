@@ -127,3 +127,34 @@ class Base:
                          "x": i[3], "y": i[4]}
                 tab.append(cls.create(**d))
         return (tab)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        import turtle
+        tor = turtle.Turtle()
+        ecran = turtle.Screen()
+        tor.speed(5)
+        tor.pensize(5)
+        for i in list_rectangles:
+            tor.penup()
+            tor.goto(i.x, i.y)
+            tor.color("black")
+            tor.pendown()
+            tor.forward(i.width)
+            tor.left(90)
+            tor.forward(i.height)
+            tor.left(90)
+            tor.forward(i.width)
+            tor.left(90)
+            tor.forward(i.height)
+
+        for j in list_squares:
+            tor.penup()
+            tor.goto(j.x, j.y)
+            tor.pendown()
+            for colors in ["red", "yellow", "purple", "blue"]:
+                tor.color(colors)
+                tor.forward(j.size)
+                tor.left(90)
+        tor.penup()
+        ecran.exitonclick()
