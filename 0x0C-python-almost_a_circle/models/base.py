@@ -152,7 +152,7 @@ class Base:
             tor.penup()
             tor.goto(j.x, j.y)
             tor.pendown()
-            for colors in ["red", "yellow", "purple", "blue"]:
+            for colors in ["green", "blue", "purple", "red"]:
                 tor.color(colors)
                 tor.forward(j.size)
                 tor.left(90)
