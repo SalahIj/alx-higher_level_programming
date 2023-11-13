@@ -27,9 +27,8 @@ class Base:
         Return:
             the result
         """
-        lenght = len(list_dictionaries)
         string = "[]"
-        if (list_dictionaries is None or lenght == 0):
+        if (list_dictionaries is None or len(list_dictionaries) == 0):
             return (string)
         else:
             return (json.dumps(list_dictionaries))
