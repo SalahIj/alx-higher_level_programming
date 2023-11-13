@@ -67,6 +67,18 @@ class Base:
             File.write(List)
 
     @classmethod
+    def create(cls, **dictionary):
+        """ method """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if (cls is Rectangle):
+            dummy = Rectangle(1, 1)
+        if (cls is Square):
+            dummy = Square(1)
+        dummy.update(**dictionary)
+        return (dummy)
+
+    @classmethod
     def load_from_file(cls):
         """ load method """
         filename = "{}.json".format(cls.__name__)
