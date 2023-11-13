@@ -43,7 +43,7 @@ class Base:
             the result
         """
         string = "[]"
-        if (not json_string or json_string is None):
+        if (not json_string):
             return (string)
         else:
             return (json.loads(json_string))
