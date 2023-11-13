@@ -42,9 +42,8 @@ class Base:
         Return:
             the result
         """
-        string = "[]"
         if (not json_string):
-            return (string)
+            return ("[]")
         else:
             return (json.loads(json_string))
 
