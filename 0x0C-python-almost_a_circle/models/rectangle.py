@@ -5,14 +5,9 @@ from models.base import Base
 
 class Rectangle(Base):
     """ Class definition """
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor:
-        Args:
-        width: the first input
-        height: the second input
-        x: the third input
-        y: the forth input
-        """
+        """ Constructor: """
         self.width = width
         self.height = height
         self.x = x
