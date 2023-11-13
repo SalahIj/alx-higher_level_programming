@@ -23,9 +23,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """ JSON representation method:
         Args:
-        list_dictionaries: the input of the method
+            list_dictionaries: the input of the method
         Return:
-        the result
+            the result
         """
         lenght = len(list_dictionaries)
         string = "[]"
@@ -33,6 +33,20 @@ class Base:
             return (string)
         else:
             return (json.dumps(list_dictionaries))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ JSON string to list of json representation:
+        Args:
+            json_string: the input of the method
+        Return:
+            the result
+        """
+        string = "[]"
+        if (not json_string or json_string is None):
+            return (string)
+        else:
+            return (json.loads(json_string))
 
     @classmethod
     def save_to_file(cls, list_objs):
