@@ -42,8 +42,9 @@ class Base:
         Return:
             the result
         """
-        if (json_string is None or len(json_string) == 0):
-            return ("[]")
+        lenght = len(json_string)
+        if (json_string is None or lenght == 0):
+            return ([])
         else:
             return (json.loads(json_string))
 
