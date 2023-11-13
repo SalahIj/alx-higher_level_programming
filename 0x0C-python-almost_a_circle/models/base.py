@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-import json
-import os
-import csv
 """ imported module """
 
 
