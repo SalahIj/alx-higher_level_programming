@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-""" Imported modules """
-
+"""Unittest for max_integer([..])
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
-
 
 class TestMaxInteger(unittest.TestCase):
     """TestCase for the max_integer function."""
@@ -28,7 +27,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_unique(self):
         """ Test with a list of one int """
         g = [41]
-        RES = max_integer(l)
+        RES = max_integer(g)
         self.assertEqual(RES, 41)
 
     def test_NEGATIVE(self):
