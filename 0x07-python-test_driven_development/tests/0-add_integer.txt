@@ -1,45 +1,47 @@
-import function for module:
-	>>> add = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
->>> add(1, 2)
-3
+>>> add_integer(0, 0)
+0
 
->>> add(1, -2)
--1
+>>> add_integer(7, 0)
+7
 
->>> add(1.4, 2)
-3
+>>> add_integer(0, 9)
+9
 
->>> add(float('inf'), 0)
-Traceback (most recent call last):
-OverflowError: cannot convert float infinity to integer
+>>> add_integer(-5, 5)
+0
 
->>> add(1, "2")
-Traceback (most recent call last):
-TypeError: b must be an integer
+>>> add_integer(3, -3)
+0
 
->>> add(0, float('nan'))
-Traceback (most recent call last):
-ValueError: cannot convert float NaN to integer
-
->>> add(2)
+>>> add_integer(2)
 100
 
->>> add()
+>>> add_integer()
 Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
->>> add('a', 'b')
+>>> add_integer('c', 'e')
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add('a')
+>>> add_integer(43, 'e')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(0, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer('b', 51)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
->>> add('c', 5)
+>>> add_integer('c')
 Traceback (most recent call last):
 TypeError: a must be an integer
-
->>> add(-12.5)
-86
