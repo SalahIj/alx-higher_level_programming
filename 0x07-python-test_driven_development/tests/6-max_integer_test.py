@@ -54,9 +54,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_FLOAT(self):
         """ Test with ints and floats """
-        g = [3, 1.5, 2]
+        g = [3, 7.3, 2]
         REA = max_integer(g)
-        self.assertEqual(REA, 1.5)
+        self.assertEqual(REA, 7.3)
 
     def test_NONE(self):
         """ Test with a None """
