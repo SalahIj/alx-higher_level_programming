@@ -1,0 +1,106 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation 
+
+>>> text_indentation("Hello   :     ALX    ?    school.    fooo     ")
+Hello:
+<BLANKLINE>
+ALX?
+<BLANKLINE>
+school.
+<BLANKLINE>
+fooo
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("    Holberton")
+Holberton
+
+>>> text_indentation("  ?  ")
+?
+<BLANKLINE>
+
+>>> text_indentation("?Hello.")
+?
+<BLANKLINE>
+Hello.
+<BLANKLINE>
+
+>>> text_indentation("?\n\n.\n\n:")
+?
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(33)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("        ALX          ")
+ALX
+
+>>> text_indentation("")
+
+>>> text_indentation("      ")
+
+>>> text_indentation("Hello: ALX")
+Hello:
+<BLANKLINE>
+ALX
+
+>>> text_indentation("      ?:  :  ")
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+>>> text_indentation("\n\n")
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation("Hello\n\n")
+Hello
+<BLANKLINE>
+
+>>> text_indentation("Hello ALX")
+Hello ALX
+
+>>> text_indentation("ALX    ")
+ALX
+
+>>> text_indentation("Hello: ALX? school. fooo")
+Hello:
+<BLANKLINE>
+ALX?
+<BLANKLINE>
+school.
+<BLANKLINE>
+fooo
+
+>>> text_indentation("Hello   :   ALX  ?  school.  fooo")
+Hello:
+<BLANKLINE>
+ALX?
+<BLANKLINE>
+school.
+<BLANKLINE>
+fooo
