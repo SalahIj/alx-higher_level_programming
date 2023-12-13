@@ -1,5 +1,5 @@
 -- Import data from...
-SELECT g.title, g.genre_id
+SELECT g.title, s.genre_id
 FROM tv_show_genres AS s
 JOIN tv_shows as g 
 ON s.show_id = g.id
