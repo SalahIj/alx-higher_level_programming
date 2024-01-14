@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """ The imported necessery modules """
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from model_city import Base, City
+
+Base = declarative_base()
 
 
 class State(Base):
