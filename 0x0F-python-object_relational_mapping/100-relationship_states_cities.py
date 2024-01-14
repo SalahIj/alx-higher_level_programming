@@ -1,23 +1,24 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ The necessery imported modules """
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+from relationship_state import Base, State
+from relationship_city import City
+from sys import argv
 
 if __name__ == "__main__":
-    import sys
-    from relationship_state import Base, State
-    from relationship_city import City
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import Session
-    from sqlalchemy.schema import Table
+    db_user = argv[1]
+    db_password = argv[2]
+    db_name = argv[3]
 
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                        .format(sys.argv[1], sys.argv[2],
-                                sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(eng)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(db_user, db_password, db_name),
+                           pool_pre_ping=True)
 
-    sess = Session(eng)
-    new_city = City(name='San Francisco')
-    new = State(name='California')
-    new.cities.append(new_city)
-    sess.add_all([new, new_city])
-    sess.commit()
-    sess.close()
+    Base.metadata.create_all(engine)
+
+    session = Session(engine)
+    california = State(name="California", cities=[City(name="San Francisco")])
+    session.add(california)
+    session.commit()
+    session.close()
