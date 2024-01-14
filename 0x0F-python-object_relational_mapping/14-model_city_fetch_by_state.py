@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ The necessery imported modules """
 from sys import argv
 from model_state import Base, State

@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Sess = sessionmaker(bind=eng)
 
     sess = Sess()
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(eng)
     state_update = sess.query(State).filter_by(id='2').first()
     state_update.name = "New Mexico"
 
