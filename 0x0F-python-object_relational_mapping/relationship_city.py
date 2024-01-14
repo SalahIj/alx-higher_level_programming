@@ -1,12 +1,14 @@
-#!/usr/bin/env python3
-""" The imported mpdules """
-from sqlalchemy import Column, Integer, String, text, ForeignKey
+#!/usr/bin/python3
+""" The necessery imported modules """
+from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
 
 
 class City(Base):
-    """ The class Defifnition """
+    """ Class definition """
     __tablename__ = 'cities'
-    id = Column(Integer, primary_key=True)
+
+    id = Column(Integer, nullable=False, primary_key=True,
+                autoincrement=True, unique=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
