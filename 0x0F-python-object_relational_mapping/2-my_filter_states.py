@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     cursor = datab.cursor()
     query = "SELECT * FROM states WHERE name LIKE BINARY '{}'".format(argv[4])
-    cur.execute(query)
+    cursor.execute(query)
 
     rows = cursor.fetchall()
     for i in rows:
