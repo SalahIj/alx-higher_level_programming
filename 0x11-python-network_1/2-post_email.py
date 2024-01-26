@@ -14,4 +14,4 @@ if __name__ == "__main__":
     req = Request(url, new_data, method='POST')
     with urlopen(req) as file_object:
         mail = file_object.read().decode('utf-8')
-        print("Your email is: {}".format(mail))
+        print(mail)
