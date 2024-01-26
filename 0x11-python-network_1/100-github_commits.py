@@ -9,9 +9,11 @@ if __name__ == "__main__":
     request = get(url)
     commits = request.json()
     try:
-        for i in range(10):
+        i = 0
+        while i < 10:
             print('{}: {}'.format(
                 commits[i].get('sha'),
                 commits[i].get('commit').get('author').get('name')))
+            i += 1
     except IndexError:
         pass
