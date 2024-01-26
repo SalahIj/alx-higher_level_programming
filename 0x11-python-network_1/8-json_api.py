@@ -14,7 +14,7 @@ if __name__ == "__main__":
     try:
         js = r_data.json()
         if js != {}:
-            print(f"[{json['id']}] {json['name']}")
+            print(f"[{js['id']}] {js['name']}")
         else:
             print("No result")
     except ValueError:
