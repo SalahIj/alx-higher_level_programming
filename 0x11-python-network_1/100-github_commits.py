@@ -13,8 +13,8 @@ if __name__ == "__main__":
         j = 0
         while j < 10:
             print('{}: {}'.format(
-                  commits[i].get('sha'),
-                  commits[i].get('commit').get('author').get('name')))
+                  commits[j].get('sha'),
+                  commits[j].get('commit').get('author').get('name')))
             j += 1
     except IndexError:
         pass
