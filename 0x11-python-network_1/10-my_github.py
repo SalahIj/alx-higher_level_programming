@@ -6,8 +6,8 @@ from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
-    sys.argv[1] = username
-    sys.argv[2] = password
+    username = sys.argv[1]
+    password = sys.argv[2]
     url = "https://api.github.com/user"
     authent = HTTPBasicAuth(username, password)
     r_data = get(url, auth=authent)
