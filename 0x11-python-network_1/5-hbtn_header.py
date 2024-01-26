@@ -6,6 +6,6 @@ from requests import get
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    r = get(url)
-    dictionary = dict(r.headers)
-    print(dictionary.get('X-Request-Id'))
+    r_data = get(url)
+    r_header = r_data.headers['X-Request-Id']
+    print(r_header)
