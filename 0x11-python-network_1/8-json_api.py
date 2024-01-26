@@ -11,11 +11,12 @@ if __name__ == "__main__":
     else:
         q = ""
     r_data = post(url, data={"q": q})
-    if r_data.headers['content-type'] == "application/json":
-        data = r_data.json()
-        if data:
-            print(f"[{json['id']}] {json['name']}")
-        else:
-            print("No result")
-    else:
+    try:
+        if r_data.headers['content-type'] == "application/json":
+            data = r_data.json()
+            if data:
+                print(f"[{json['id']}] {json['name']}")
+            else:
+                print("No result")
+    except ValueError:
         print("Not a valid JSON")
