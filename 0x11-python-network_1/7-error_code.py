@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """ The necessery imported modules """
 import sys
 from requests import get
