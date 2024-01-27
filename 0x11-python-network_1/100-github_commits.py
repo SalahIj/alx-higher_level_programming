@@ -9,9 +9,11 @@ if __name__ == "__main__":
     r_data = get(url)
     com = r_data.json()
     try:
-        for i in range(10):
+        j = 0
+        while j < 10:
             print('{}: {}'.format(
                 com[i].get('sha'),
                 com[i].get('commit').get('author').get('name')))
+            j = j + 1
     except IndexError:
         pass
