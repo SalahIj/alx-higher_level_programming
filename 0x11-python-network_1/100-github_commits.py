@@ -12,8 +12,8 @@ if __name__ == "__main__":
         j = 0
         while j < 10:
             print('{}: {}'.format(
-                com[i].get('sha'),
-                com[i].get('commit').get('author').get('name')))
+                com[j].get('sha'),
+                com[j].get('commit').get('author').get('name')))
             j = j + 1
     except IndexError:
         pass
