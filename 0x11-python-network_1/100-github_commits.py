@@ -11,7 +11,6 @@ if __name__ == "__main__":
     try:
         j = 0
         while j < 10:
-
             print('{}: {}'.format(com[j]['sha'],
                   com[j].get('commit').get('author').get('name')))
             j = j + 1
