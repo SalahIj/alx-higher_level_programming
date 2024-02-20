@@ -13,7 +13,7 @@ request.get(process.argv[2], function (error, response, body) {
       if (err) {
         console.error(err);
       } else {
-        console.log(`${process.argv[3]}`);
+        request(process.argv[2]).pipe(fs.createWriteStream(process.argv[3]));
       }
     });
   }
