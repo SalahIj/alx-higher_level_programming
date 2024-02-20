@@ -7,9 +7,8 @@ if (process.argv.length !== 4) {
 }
 
 const Path = process.argv[2];
-const stringToWrite = process.argv[3];
 
-fs.writeFile(Path, stringToWrite, 'utf-8', (err) => {
+fs.writeFile(Path, process.argv[3], 'utf-8', function (err) {
   if (err) {
     console.error(err);
   }
